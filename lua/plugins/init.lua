@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -10,6 +10,15 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
+    end,
+  },
+
+  {
+    "lspcontainers/lspcontainers.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("lspcontainers").setup {}
     end,
   },
 
